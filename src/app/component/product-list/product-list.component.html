@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="row MT30">
+      <div class="col-12">
+
+        <div class="">
+          <input type="text" class="form-control" placeholder="Search by Product name, Code" id="searchPro"
+            [(ngModel)]='nameSearch'>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 MT30" *ngFor='let lst of list | filter:nameSearch'>
+        <div class="card">
+          <img src="https://dummyimage.com/300x200/999999/fff.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{lst.productType}} - <strong>{{lst.productName}}</strong>
+              <br>
+              <small>code-{{lst.proCode}}</small>
+            </h5>
+            <p class="card-text">Rs {{lst.proPrice}}</p>
+            <a (click)="addProductToCart(lst)" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <app-add-to-cart [productshow]="productshow" [test] = 'test'></app-add-to-cart>
+  </div>
+</div>

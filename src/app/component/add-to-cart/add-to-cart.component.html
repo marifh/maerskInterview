@@ -1,0 +1,13 @@
+<h3 class="MT30">Shopping Cart ({{calcTotal()}})</h3>
+<ul class="list-group" *ngIf="productshow">
+    <li class="list-group-item" *ngFor='let tst of test'>
+        {{tst.productName}}
+        <strong class="float-right">Rs {{tst.proPrice}}</strong>
+    </li>
+</ul>
+
+<ul class="list-group" *ngIf="!productshow">
+    <li class="list-group-item ">
+        Cart empty..
+    </li>
+</ul>
